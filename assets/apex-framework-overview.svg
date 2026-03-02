@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="720" viewBox="0 0 1000 720" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="1000" height="720" fill="#0a0e1a"/>
+
+  <!-- Title -->
+  <text x="500" y="48" text-anchor="middle" font-size="28" font-weight="900" letter-spacing="6" fill="url(#titleGrad)">APEX RESILIENCE FRAMEWORK</text>
+  <text x="500" y="70" text-anchor="middle" font-size="11" letter-spacing="3" fill="#4a6080">APPLICATION PERFORMANCE &amp; EXCELLENCE — MATURITY MODEL OVERVIEW</text>
+
+  <!-- Title gradient -->
+  <defs>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#cd7f32"/>
+      <stop offset="33%" style="stop-color:#c0c0c0"/>
+      <stop offset="66%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#e5e4e2"/>
+    </linearGradient>
+    <linearGradient id="bronzeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#cd7f32;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#cd7f32;stop-opacity:0.08"/>
+    </linearGradient>
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c0c0c0;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#c0c0c0;stop-opacity:0.08"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#ffd700;stop-opacity:0.08"/>
+    </linearGradient>
+    <linearGradient id="platGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e5e4e2;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#e5e4e2;stop-opacity:0.08"/>
+    </linearGradient>
+    <filter id="glow-bronze">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-gold">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── CERTIFICATION LADDER (top section) ── -->
+
+  <!-- Section label -->
+  <text x="500" y="105" text-anchor="middle" font-size="10" letter-spacing="2" fill="#2a4060">─────────────────  CERTIFICATION LADDER  ─────────────────</text>
+
+  <!-- BRONZE -->
+  <rect x="30" y="118" width="210" height="118" rx="10" fill="url(#bronzeGrad)" stroke="#cd7f32" stroke-width="1.5"/>
+  <text x="135" y="142" text-anchor="middle" font-size="22">🥉</text>
+  <text x="135" y="162" text-anchor="middle" font-size="14" font-weight="900" letter-spacing="3" fill="#cd7f32">BRONZE</text>
+  <text x="135" y="178" text-anchor="middle" font-size="9" fill="#7a9bb5">NON-PRODUCTION</text>
+  <line x1="50" y1="185" x2="220" y2="185" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="135" y="200" text-anchor="middle" font-size="10" fill="#a0b4c8">Score: 200 – 350</text>
+  <text x="135" y="215" text-anchor="middle" font-size="9" fill="#4a6080">2D: Capability + Performance</text>
+  <text x="135" y="228" text-anchor="middle" font-size="9" fill="#4a6080">Foundational Resilience</text>
+
+  <!-- Arrow Bronze → Silver -->
+  <text x="252" y="182" text-anchor="middle" font-size="20" fill="#1e3a5f">→</text>
+
+  <!-- SILVER -->
+  <rect x="265" y="118" width="210" height="118" rx="10" fill="url(#silverGrad)" stroke="#c0c0c0" stroke-width="1.5"/>
+  <text x="370" y="142" text-anchor="middle" font-size="22">🥈</text>
+  <text x="370" y="162" text-anchor="middle" font-size="14" font-weight="900" letter-spacing="3" fill="#c0c0c0">SILVER</text>
+  <text x="370" y="178" text-anchor="middle" font-size="9" fill="#7a9bb5">NON-PRODUCTION</text>
+  <line x1="285" y1="185" x2="455" y2="185" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="370" y="200" text-anchor="middle" font-size="10" fill="#a0b4c8">Score: 351 – 500</text>
+  <text x="370" y="215" text-anchor="middle" font-size="9" fill="#4a6080">2D: Capability + Performance</text>
+  <text x="370" y="228" text-anchor="middle" font-size="9" fill="#4a6080">Operational Maturity</text>
+
+  <!-- Arrow Silver → Gold -->
+  <text x="487" y="182" text-anchor="middle" font-size="20" fill="#1e3a5f">→</text>
+
+  <!-- GOLD -->
+  <rect x="500" y="118" width="210" height="118" rx="10" fill="url(#goldGrad)" stroke="#ffd700" stroke-width="1.5"/>
+  <text x="605" y="142" text-anchor="middle" font-size="22">🥇</text>
+  <text x="605" y="162" text-anchor="middle" font-size="14" font-weight="900" letter-spacing="3" fill="#ffd700">GOLD</text>
+  <text x="605" y="178" text-anchor="middle" font-size="9" fill="#7a9bb5">PRODUCTION</text>
+  <line x1="520" y1="185" x2="690" y2="185" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="605" y="200" text-anchor="middle" font-size="10" fill="#a0b4c8">Score: 501 – 800</text>
+  <text x="605" y="215" text-anchor="middle" font-size="9" fill="#4a6080">3D: Cap + Perf + Stakeholder</text>
+  <text x="605" y="228" text-anchor="middle" font-size="9" fill="#4a6080">Engineering Excellence</text>
+
+  <!-- Arrow Gold → Platinum -->
+  <text x="722" y="182" text-anchor="middle" font-size="20" fill="#1e3a5f">→</text>
+
+  <!-- PLATINUM -->
+  <rect x="735" y="118" width="235" height="118" rx="10" fill="url(#platGrad)" stroke="#e5e4e2" stroke-width="2" filter="url(#glow-gold)"/>
+  <text x="852" y="142" text-anchor="middle" font-size="22">🏆</text>
+  <text x="852" y="162" text-anchor="middle" font-size="14" font-weight="900" letter-spacing="3" fill="#e5e4e2">PLATINUM</text>
+  <text x="852" y="178" text-anchor="middle" font-size="9" fill="#7a9bb5">PRODUCTION</text>
+  <line x1="755" y1="185" x2="955" y2="185" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="852" y="200" text-anchor="middle" font-size="10" fill="#a0b4c8">Score: 801 – 1000</text>
+  <text x="852" y="215" text-anchor="middle" font-size="9" fill="#4a6080">3D: Cap + Perf + Stakeholder</text>
+  <text x="852" y="228" text-anchor="middle" font-size="9" fill="#4a6080">Autonomous Resilience</text>
+
+  <!-- ── 7 CORE CATEGORIES ── -->
+  <text x="500" y="268" text-anchor="middle" font-size="10" letter-spacing="2" fill="#2a4060">──────────────────  7 CORE ASSESSMENT AREAS  ──────────────────</text>
+
+  <!-- Category pills — row 1 -->
+  <!-- DR & BC -->
+  <rect x="30" y="278" width="192" height="64" rx="8" fill="#0d1b2a" stroke="#4a9eff" stroke-width="1.2"/>
+  <rect x="30" y="278" width="6" height="64" rx="3" fill="#4a9eff"/>
+  <text x="140" y="298" text-anchor="middle" font-size="11" font-weight="700" fill="#4a9eff">DR &amp; Business Continuity</text>
+  <text x="140" y="314" text-anchor="middle" font-size="9" fill="#4a6080">RTO/RPO · DR Exercises · Failover</text>
+  <text x="140" y="328" text-anchor="middle" font-size="9" fill="#2a4060">Weight: 18%  |  72 pts</text>
+
+  <!-- Chaos Engineering -->
+  <rect x="236" y="278" width="192" height="64" rx="8" fill="#0d1b2a" stroke="#a855f7" stroke-width="1.2"/>
+  <rect x="236" y="278" width="6" height="64" rx="3" fill="#a855f7"/>
+  <text x="346" y="298" text-anchor="middle" font-size="11" font-weight="700" fill="#a855f7">Chaos Engineering</text>
+  <text x="346" y="314" text-anchor="middle" font-size="9" fill="#4a6080">Game Days · Blast Radius · Prod Chaos</text>
+  <text x="346" y="328" text-anchor="middle" font-size="9" fill="#2a4060">Weight: 20%  |  80 pts</text>
+
+  <!-- Incident Management -->
+  <rect x="442" y="278" width="192" height="64" rx="8" fill="#0d1b2a" stroke="#f97316" stroke-width="1.2"/>
+  <rect x="442" y="278" width="6" height="64" rx="3" fill="#f97316"/>
+  <text x="552" y="298" text-anchor="middle" font-size="11" font-weight="700" fill="#f97316">Incident Management</text>
+  <text x="552" y="314" text-anchor="middle" font-size="9" fill="#4a6080">MTTD · MTTR · Runbooks · Post-mortems</text>
+  <text x="552" y="328" text-anchor="middle" font-size="9" fill="#2a4060">Weight: 22%  |  88 pts</text>
+
+  <!-- Observability -->
+  <rect x="648" y="278" width="192" height="64" rx="8" fill="#0d1b2a" stroke="#10b981" stroke-width="1.2"/>
+  <rect x="648" y="278" width="6" height="64" rx="3" fill="#10b981"/>
+  <text x="758" y="298" text-anchor="middle" font-size="11" font-weight="700" fill="#10b981">Observability &amp; Detection</text>
+  <text x="758" y="314" text-anchor="middle" font-size="9" fill="#4a6080">Monitoring · SLO/SLI · Alerting</text>
+  <text x="758" y="328" text-anchor="middle" font-size="9" fill="#2a4060">Weight: 18%  |  72 pts</text>
+
+  <!-- Row 2 — 3 categories centred -->
+  <!-- Automation -->
+  <rect x="113" y="356" width="192" height="64" rx="8" fill="#0d1b2a" stroke="#06b6d4" stroke-width="1.2"/>
+  <rect x="113" y="356" width="6" height="64" rx="3" fill="#06b6d4"/>
+  <text x="223" y="376" text-anchor="middle" font-size="11" font-weight="700" fill="#06b6d4">Automation &amp; Self-Healing</text>
+  <text x="223" y="392" text-anchor="middle" font-size="9" fill="#4a6080">IaC · CI/CD · Auto-Remediation</text>
+  <text x="223" y="406" text-anchor="middle" font-size="9" fill="#2a4060">Weight: 15%  |  44 pts</text>
+
+  <!-- Architecture -->
+  <rect x="404" y="356" width="192" height="64" rx="8" fill="#0d1b2a" stroke="#f43f5e" stroke-width="1.2"/>
+  <rect x="404" y="356" width="6" height="64" rx="3" fill="#f43f5e"/>
+  <text x="514" y="376" text-anchor="middle" font-size="11" font-weight="700" fill="#f43f5e">Architecture &amp; Design</text>
+  <text x="514" y="392" text-anchor="middle" font-size="9" fill="#4a6080">Circuit Breakers · Retry · Degradation</text>
+  <text x="514" y="406" text-anchor="middle" font-size="9" fill="#2a4060">Weight: 12%  |  24 pts</text>
+
+  <!-- Culture -->
+  <rect x="695" y="356" width="192" height="64" rx="8" fill="#0d1b2a" stroke="#eab308" stroke-width="1.2"/>
+  <rect x="695" y="356" width="6" height="64" rx="3" fill="#eab308"/>
+  <text x="805" y="376" text-anchor="middle" font-size="11" font-weight="700" fill="#eab308">Culture &amp; Org Maturity</text>
+  <text x="805" y="392" text-anchor="middle" font-size="9" fill="#4a6080">Ownership · Training · Improvement</text>
+  <text x="805" y="406" text-anchor="middle" font-size="9" fill="#2a4060">Weight: 10%  |  20 pts</text>
+
+  <!-- ── 3D SCORING MODEL ── -->
+  <text x="500" y="446" text-anchor="middle" font-size="10" letter-spacing="2" fill="#2a4060">──────────────────  3-DIMENSIONAL SCORING MODEL (Gold &amp; Platinum)  ──────────────────</text>
+
+  <!-- Dim 1 -->
+  <rect x="30" y="456" width="296" height="70" rx="8" fill="#0d1b2a" stroke="#4a9eff" stroke-width="1.2"/>
+  <text x="178" y="478" text-anchor="middle" font-size="12" font-weight="700" fill="#4a9eff">DIMENSION 1 — CAPABILITY</text>
+  <text x="178" y="496" text-anchor="middle" font-size="10" fill="#7a9bb5">What your system CAN do</text>
+  <text x="178" y="513" text-anchor="middle" font-size="10" fill="#a0b4c8">400 pts  ·  Determines certification eligibility</text>
+
+  <!-- Dim 2 -->
+  <rect x="352" y="456" width="296" height="70" rx="8" fill="#0d1b2a" stroke="#a855f7" stroke-width="1.2"/>
+  <text x="500" y="478" text-anchor="middle" font-size="12" font-weight="700" fill="#a855f7">DIMENSION 2 — PERFORMANCE</text>
+  <text x="500" y="496" text-anchor="middle" font-size="10" fill="#7a9bb5">What your system ACTUALLY delivers</text>
+  <text x="500" y="513" text-anchor="middle" font-size="10" fill="#a0b4c8">400 pts  ·  Determines certification retention</text>
+
+  <!-- Dim 3 -->
+  <rect x="674" y="456" width="296" height="70" rx="8" fill="#0d1b2a" stroke="#10b981" stroke-width="1.2"/>
+  <text x="822" y="478" text-anchor="middle" font-size="12" font-weight="700" fill="#10b981">DIMENSION 3 — STAKEHOLDER</text>
+  <text x="822" y="496" text-anchor="middle" font-size="10" fill="#7a9bb5">How stakeholders EXPERIENCE it</text>
+  <text x="822" y="513" text-anchor="middle" font-size="10" fill="#a0b4c8">200 pts  ·  NPS · SRE confidence · Exec trust</text>
+
+  <!-- ── KEY MECHANICS ── -->
+  <text x="500" y="552" text-anchor="middle" font-size="10" letter-spacing="2" fill="#2a4060">──────────────────────────  KEY MECHANICS  ──────────────────────────</text>
+
+  <!-- Non-Negotiables -->
+  <rect x="30" y="562" width="220" height="80" rx="8" fill="#0d1b2a" stroke="#f43f5e" stroke-width="1.2"/>
+  <text x="140" y="582" text-anchor="middle" font-size="11" font-weight="700" fill="#f43f5e">🔒  Non-Negotiables</text>
+  <text x="140" y="600" text-anchor="middle" font-size="9" fill="#7a9bb5">Hard gates per level — fail any one</text>
+  <text x="140" y="614" text-anchor="middle" font-size="9" fill="#7a9bb5">= certification denied regardless</text>
+  <text x="140" y="628" text-anchor="middle" font-size="9" fill="#4a6080">of total score</text>
+
+  <!-- Incident Penalties -->
+  <rect x="265" y="562" width="220" height="80" rx="8" fill="#0d1b2a" stroke="#f97316" stroke-width="1.2"/>
+  <text x="375" y="582" text-anchor="middle" font-size="11" font-weight="700" fill="#f97316">⚡  Incident Penalties</text>
+  <text x="375" y="600" text-anchor="middle" font-size="9" fill="#7a9bb5">Sev 0 → Immediate downgrade + 90d</text>
+  <text x="375" y="614" text-anchor="middle" font-size="9" fill="#7a9bb5">Sev 1 → −150 pts</text>
+  <text x="375" y="628" text-anchor="middle" font-size="9" fill="#4a6080">Sev 2 → −50 pts</text>
+
+  <!-- Complexity Classification -->
+  <rect x="500" y="562" width="220" height="80" rx="8" fill="#0d1b2a" stroke="#eab308" stroke-width="1.2"/>
+  <text x="610" y="582" text-anchor="middle" font-size="11" font-weight="700" fill="#eab308">📊  Complexity Classification</text>
+  <text x="610" y="600" text-anchor="middle" font-size="9" fill="#7a9bb5">Simple · Mid-Tier · Complex</text>
+  <text x="610" y="614" text-anchor="middle" font-size="9" fill="#7a9bb5">8-criteria weighted scoring</text>
+  <text x="610" y="628" text-anchor="middle" font-size="9" fill="#4a6080">adjusts thresholds per app type</text>
+
+  <!-- PP / PIP -->
+  <rect x="735" y="562" width="235" height="80" rx="8" fill="#0d1b2a" stroke="#06b6d4" stroke-width="1.2"/>
+  <text x="852" y="582" text-anchor="middle" font-size="11" font-weight="700" fill="#06b6d4">🔄  Probation &amp; PIP</text>
+  <text x="852" y="600" text-anchor="middle" font-size="9" fill="#7a9bb5">Provisional → Certified (3 months)</text>
+  <text x="852" y="614" text-anchor="middle" font-size="9" fill="#7a9bb5">PIP: 60-day remediation window</text>
+  <text x="852" y="628" text-anchor="middle" font-size="9" fill="#4a6080">Structured re-entry after revocation</text>
+
+  <!-- ── FOOTER ── -->
+  <line x1="30" y1="660" x2="970" y2="660" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="500" y="678" text-anchor="middle" font-size="10" fill="#2a4060">Total Score: 1000 pts  ·  Non-Production: Bronze &amp; Silver  ·  Production: Gold &amp; Platinum</text>
+  <text x="500" y="696" text-anchor="middle" font-size="9" fill="#1e3a5f">Copyright © 2026 — APEX Resilience Framework — MIT License — Use at your own risk. See DISCLAIMER.md</text>
+  <text x="500" y="712" text-anchor="middle" font-size="10" letter-spacing="2" fill="#1e3a5f">— REACHING THE APEX OF RESILIENCE —</text>
+
+</svg>

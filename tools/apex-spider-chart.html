@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEX Resilience Framework</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0e1a; color: #e0e6f0; font-family: 'Segoe UI', sans-serif; min-height: 100vh; }
+
+  .header { background: linear-gradient(135deg, #0d1b2a 0%, #1a2744 100%); padding: 20px 30px; border-bottom: 1px solid #1e3a5f; display: flex; align-items: center; gap: 20px; }
+  .logo { font-size: 28px; font-weight: 900; letter-spacing: 4px; background: linear-gradient(90deg, #cd7f32, #c0c0c0, #ffd700, #e5e4e2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .tagline { font-size: 11px; color: #7a9bb5; letter-spacing: 2px; text-transform: uppercase; }
+
+  .main { display: grid; grid-template-columns: 1fr 380px; gap: 0; height: calc(100vh - 76px); overflow: hidden; }
+
+  /* LEFT PANEL */
+  .left-panel { padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
+
+  /* PRESETS */
+  .presets { display: flex; gap: 8px; flex-wrap: wrap; }
+  .preset-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid; cursor: pointer; font-size: 11px; font-weight: 600; letter-spacing: 1px; transition: all 0.2s; }
+  .preset-btn.bronze { border-color: #cd7f32; color: #cd7f32; background: rgba(205,127,50,0.1); }
+  .preset-btn.silver { border-color: #c0c0c0; color: #c0c0c0; background: rgba(192,192,192,0.1); }
+  .preset-btn.gold { border-color: #ffd700; color: #ffd700; background: rgba(255,215,0,0.1); }
+  .preset-btn.platinum { border-color: #e5e4e2; color: #e5e4e2; background: rgba(229,228,226,0.1); }
+  .preset-btn:hover { transform: translateY(-1px); filter: brightness(1.3); }
+  .preset-btn.active { filter: brightness(1.5); box-shadow: 0 0 10px currentColor; }
+
+  /* CHART AREA */
+  .chart-container { background: #0d1b2a; border: 1px solid #1e3a5f; border-radius: 12px; padding: 10px; display: flex; justify-content: center; }
+  canvas { max-width: 100%; }
+
+  /* SLIDERS */
+  .sliders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .slider-card { background: #0d1b2a; border: 1px solid #1e3a5f; border-radius: 8px; padding: 12px; }
+  .slider-label { font-size: 11px; color: #7a9bb5; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .slider-val { font-size: 18px; font-weight: 700; color: #e0e6f0; }
+  .slider-max { font-size: 11px; color: #4a6080; }
+  input[type=range] { width: 100%; height: 4px; margin-top: 8px; accent-color: #4a9eff; cursor: pointer; }
+
+  .perf-stake-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  /* RIGHT PANEL */
+  .right-panel { background: #0d1b2a; border-left: 1px solid #1e3a5f; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
+
+  /* CERT BADGE */
+  .cert-badge { border-radius: 12px; padding: 20px; text-align: center; border: 2px solid; transition: all 0.4s; }
+  .cert-badge.bronze { border-color: #cd7f32; background: linear-gradient(135deg, rgba(205,127,50,0.15), rgba(205,127,50,0.05)); box-shadow: 0 0 20px rgba(205,127,50,0.2); }
+  .cert-badge.silver { border-color: #c0c0c0; background: linear-gradient(135deg, rgba(192,192,192,0.15), rgba(192,192,192,0.05)); box-shadow: 0 0 20px rgba(192,192,192,0.2); }
+  .cert-badge.gold { border-color: #ffd700; background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05)); box-shadow: 0 0 20px rgba(255,215,0,0.2); }
+  .cert-badge.platinum { border-color: #e5e4e2; background: linear-gradient(135deg, rgba(229,228,226,0.15), rgba(229,228,226,0.05)); box-shadow: 0 0 30px rgba(229,228,226,0.3); }
+  .cert-badge.none { border-color: #333; background: rgba(51,51,51,0.1); }
+  .cert-icon { font-size: 36px; margin-bottom: 6px; }
+  .cert-name { font-size: 20px; font-weight: 900; letter-spacing: 3px; }
+  .cert-score { font-size: 32px; font-weight: 700; margin: 6px 0; }
+  .cert-range { font-size: 11px; color: #7a9bb5; }
+  .cert-pct { font-size: 14px; font-weight: 600; }
+
+  /* DIMENSION FLOORS */
+  .section-title { font-size: 11px; color: #7a9bb5; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+  .floor-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #111d30; font-size: 12px; }
+  .floor-label { color: #a0b4c8; }
+  .floor-val { font-weight: 600; }
+  .check { font-size: 14px; }
+  .pass { color: #4caf50; }
+  .fail { color: #f44336; }
+
+  /* SCORE BARS */
+  .score-bar-wrap { margin-bottom: 8px; }
+  .score-bar-label { display: flex; justify-content: space-between; font-size: 11px; color: #7a9bb5; margin-bottom: 3px; }
+  .score-bar-bg { height: 6px; background: #1e3a5f; border-radius: 3px; overflow: hidden; }
+  .score-bar-fill { height: 100%; border-radius: 3px; transition: width 0.4s; }
+
+  /* LEVEL LADDER */
+  .ladder { display: flex; flex-direction: column; gap: 6px; }
+  .ladder-item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 8px; border: 1px solid #1e3a5f; font-size: 12px; transition: all 0.3s; }
+  .ladder-item.active-level { border-width: 2px; }
+  .ladder-item.active-level.bronze { border-color: #cd7f32; background: rgba(205,127,50,0.1); }
+  .ladder-item.active-level.silver { border-color: #c0c0c0; background: rgba(192,192,192,0.1); }
+  .ladder-item.active-level.gold { border-color: #ffd700; background: rgba(255,215,0,0.1); }
+  .ladder-item.active-level.platinum { border-color: #e5e4e2; background: rgba(229,228,226,0.1); }
+  .ladder-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-bronze { background: #cd7f32; }
+  .dot-silver { background: #c0c0c0; }
+  .dot-gold { background: #ffd700; }
+  .dot-platinum { background: #e5e4e2; }
+  .ladder-name { font-weight: 700; flex: 1; }
+  .ladder-range { color: #4a6080; font-size: 10px; }
+
+  .app-selector { display: flex; flex-direction: column; gap: 4px; }
+  .app-selector label { font-size: 11px; color: #7a9bb5; text-transform: uppercase; letter-spacing: 1px; }
+  .app-selector select { background: #0a0e1a; border: 1px solid #1e3a5f; color: #e0e6f0; padding: 6px 10px; border-radius: 6px; font-size: 12px; }
+
+  .panel-label { font-size: 12px; color: #7a9bb5; margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="logo">APEX</div>
+    <div class="tagline">Application Performance & EXcellence — Resilience Maturity Framework</div>
+  </div>
+  <div style="margin-left:auto; text-align:right">
+    <div style="font-size:11px;color:#4a6080">Interactive Assessment Tool</div>
+    <div style="font-size:10px;color:#2a4060">v1.1 — Bronze · Silver · Gold · Platinum</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="left-panel">
+
+    <div>
+      <div class="panel-label">Load Scenario</div>
+      <div class="presets">
+        <button class="preset-btn platinum active" onclick="loadPreset('platinum')">🏆 Payment Gateway (Platinum)</button>
+        <button class="preset-btn gold" onclick="loadPreset('gold')">🥇 E-Commerce (Gold)</button>
+        <button class="preset-btn silver" onclick="loadPreset('silver')">🥈 API Gateway (Silver)</button>
+        <button class="preset-btn bronze" onclick="loadPreset('bronze')">🥉 Internal Dashboard (Bronze)</button>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="spiderChart" width="500" height="480"></canvas>
+    </div>
+
+    <div>
+      <div class="panel-label">Capability Scores (per category)</div>
+      <div class="sliders-grid" id="capSliders"></div>
+    </div>
+
+    <div class="perf-stake-row">
+      <div class="slider-card">
+        <div class="slider-label">Performance Score</div>
+        <div><span class="slider-val" id="perfVal">352</span> <span class="slider-max">/ 400</span></div>
+        <input type="range" id="perfSlider" min="0" max="400" value="352" oninput="updateAll()">
+      </div>
+      <div class="slider-card">
+        <div class="slider-label">Stakeholder Score</div>
+        <div><span class="slider-val" id="stakeVal">172</span> <span class="slider-max">/ 200</span></div>
+        <input type="range" id="stakeSlider" min="0" max="200" value="172" oninput="updateAll()">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="right-panel">
+
+    <div class="cert-badge platinum" id="certBadge">
+      <div class="cert-icon" id="certIcon">🏆</div>
+      <div class="cert-name" id="certName" style="color:#e5e4e2">PLATINUM</div>
+      <div class="cert-score" id="certScore" style="color:#e5e4e2">892</div>
+      <div class="cert-pct" id="certPct" style="color:#e5e4e2">89.2%</div>
+      <div class="cert-range" id="certRange">Score range: 801–1000</div>
+    </div>
+
+    <div>
+      <div class="section-title">Dimension Floors</div>
+      <div class="floor-row">
+        <span class="floor-label">Capability</span>
+        <span class="floor-val" id="floorCapVal">368/400</span>
+        <span class="check pass" id="floorCapCheck">✅</span>
+      </div>
+      <div class="floor-row">
+        <span class="floor-label">Performance</span>
+        <span class="floor-val" id="floorPerfVal">352/400</span>
+        <span class="check pass" id="floorPerfCheck">✅</span>
+      </div>
+      <div class="floor-row">
+        <span class="floor-label">Stakeholder</span>
+        <span class="floor-val" id="floorStakeVal">172/200</span>
+        <span class="check pass" id="floorStakeCheck">✅</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-title">Score Breakdown</div>
+      <div id="scoreBars"></div>
+    </div>
+
+    <div>
+      <div class="section-title">Certification Ladder</div>
+      <div class="ladder">
+        <div class="ladder-item" id="ladder-platinum">
+          <div class="ladder-dot dot-platinum"></div>
+          <div class="ladder-name" style="color:#e5e4e2">PLATINUM</div>
+          <div class="ladder-range">801–1000 pts</div>
+        </div>
+        <div class="ladder-item" id="ladder-gold">
+          <div class="ladder-dot dot-gold"></div>
+          <div class="ladder-name" style="color:#ffd700">GOLD</div>
+          <div class="ladder-range">501–800 pts</div>
+        </div>
+        <div class="ladder-item" id="ladder-silver">
+          <div class="ladder-dot dot-silver"></div>
+          <div class="ladder-name" style="color:#c0c0c0">SILVER</div>
+          <div class="ladder-range">351–500 pts</div>
+        </div>
+        <div class="ladder-item" id="ladder-bronze">
+          <div class="ladder-dot dot-bronze"></div>
+          <div class="ladder-name" style="color:#cd7f32">BRONZE</div>
+          <div class="ladder-range">200–350 pts</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#0a1628;border:1px solid #1e3a5f;border-radius:8px;padding:12px;font-size:11px;color:#4a7090;line-height:1.6" id="storyNote">
+      🏆 <strong style="color:#e5e4e2">Platinum Certified</strong> — Payment Gateway Service<br>
+      Autonomous resilience achieved. Systems self-heal, chaos is continuous, and stakeholder experience is exceptional. MTTD &lt;2min, MTTR &lt;12min, NPS 74.
+    </div>
+
+  </div>
+</div>
+
+<script>
+const CATS = [
+  { key:'dr',    label:'DR & BC',           max:72,  color:'#4a9eff' },
+  { key:'chaos', label:'Chaos Engineering', max:80,  color:'#a855f7' },
+  { key:'inc',   label:'Incident Mgmt',     max:88,  color:'#f97316' },
+  { key:'obs',   label:'Observability',     max:72,  color:'#10b981' },
+  { key:'auto',  label:'Automation',        max:44,  color:'#06b6d4' },
+  { key:'arch',  label:'Architecture',      max:24,  color:'#f43f5e' },
+  { key:'cult',  label:'Culture & Org',     max:20,  color:'#eab308' },
+];
+
+const PRESETS = {
+  platinum: {
+    name:'Payment Gateway Service', tier:'Complex (Tier 0)', profile:'High-Velocity',
+    cap:{ dr:65, chaos:72, inc:80, obs:65, auto:38, arch:18, cult:17 },
+    perf:352, stake:172,
+    note:'🏆 <strong style="color:#e5e4e2">Platinum Certified</strong> — Payment Gateway Service<br>Autonomous resilience achieved. MTTD &lt;2min, MTTR &lt;12min, NPS 74. Systems self-defend.'
+  },
+  gold: {
+    name:'E-Commerce Checkout', tier:'Mid-Tier (Tier 2)', profile:'High-Velocity',
+    cap:{ dr:54, chaos:58, inc:66, obs:55, auto:30, arch:16, cult:14 },
+    perf:290, stake:125,
+    note:'🥇 <strong style="color:#ffd700">Gold Certified</strong> — E-Commerce Checkout<br>Production resilience with real customer impact tracked. Monthly chaos in prod, NPS monitored, SRE confidence high.'
+  },
+  silver: {
+    name:'API Gateway Service', tier:'Mid-Tier (Tier 2)', profile:'API Gateway',
+    cap:{ dr:48, chaos:44, inc:55, obs:46, auto:24, arch:12, cult:10 },
+    perf:195, stake:0,
+    note:'🥈 <strong style="color:#c0c0c0">Silver Certified</strong> — API Gateway Service<br>Non-production advanced maturity. Monthly chaos tests, SLOs defined, deployment automation mature.'
+  },
+  bronze: {
+    name:'Internal Dashboard', tier:'Simple (Tier 4)', profile:'Standard',
+    cap:{ dr:28, chaos:20, inc:32, obs:28, auto:14, arch:7, cult:6 },
+    perf:98, stake:0,
+    note:'🥉 <strong style="color:#cd7f32">Bronze Certified</strong> — Internal Dashboard<br>Foundational resilience established. DR plan documented, basic monitoring live, rollback capability exists.'
+  }
+};
+
+let state = { ...PRESETS.platinum.cap, perf: PRESETS.platinum.perf, stake: PRESETS.platinum.stake };
+let activePreset = 'platinum';
+
+function buildSliders() {
+  const c = document.getElementById('capSliders');
+  c.innerHTML = '';
+  CATS.forEach(cat => {
+    const v = state[cat.key];
+    c.innerHTML += `
+      <div class="slider-card">
+        <div class="slider-label">${cat.label}</div>
+        <div><span class="slider-val" id="sv_${cat.key}">${v}</span> <span class="slider-max">/ ${cat.max}</span></div>
+        <input type="range" id="sl_${cat.key}" min="0" max="${cat.max}" value="${v}"
+          style="accent-color:${cat.color}" oninput="updateCap('${cat.key}', this.value)">
+      </div>`;
+  });
+}
+
+function updateCap(key, val) {
+  state[key] = +val;
+  document.getElementById('sv_'+key).textContent = val;
+  activePreset = null;
+  document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+  updateAll();
+}
+
+function loadPreset(p) {
+  const pr = PRESETS[p];
+  state = { ...pr.cap, perf: pr.perf, stake: pr.stake };
+  activePreset = p;
+  CATS.forEach(c => {
+    const sl = document.getElementById('sl_'+c.key);
+    const sv = document.getElementById('sv_'+c.key);
+    if(sl){ sl.value = state[c.key]; sv.textContent = state[c.key]; }
+  });
+  document.getElementById('perfSlider').value = state.perf;
+  document.getElementById('perfVal').textContent = state.perf;
+  document.getElementById('stakeSlider').value = state.stake;
+  document.getElementById('stakeVal').textContent = state.stake;
+  document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.preset-btn').forEach(b => { if(b.textContent.toLowerCase().includes(p)) b.classList.add('active'); });
+  document.getElementById('storyNote').innerHTML = pr.note;
+  updateAll();
+}
+
+function updateAll() {
+  state.perf = +document.getElementById('perfSlider').value;
+  state.stake = +document.getElementById('stakeSlider').value;
+  document.getElementById('perfVal').textContent = state.perf;
+  document.getElementById('stakeVal').textContent = state.stake;
+
+  const capTotal = CATS.reduce((s, c) => s + state[c.key], 0);
+  const total = capTotal + state.perf + state.stake;
+
+  // Cert level
+  let level = 'none', icon = '—', color = '#555', rangeTxt = 'Score: < 200';
+  if (total >= 801) { level='platinum'; icon='🏆'; color='#e5e4e2'; rangeTxt='Score range: 801–1000'; }
+  else if (total >= 501) { level='gold'; icon='🥇'; color='#ffd700'; rangeTxt='Score range: 501–800'; }
+  else if (total >= 351) { level='silver'; icon='🥈'; color='#c0c0c0'; rangeTxt='Score range: 351–500'; }
+  else if (total >= 200) { level='bronze'; icon='🥉'; color='#cd7f32'; rangeTxt='Score range: 200–350'; }
+
+  const badge = document.getElementById('certBadge');
+  badge.className = 'cert-badge ' + (level === 'none' ? 'none' : level);
+  document.getElementById('certIcon').textContent = icon;
+  document.getElementById('certName').textContent = level === 'none' ? 'NO CERT' : level.toUpperCase();
+  document.getElementById('certName').style.color = color;
+  document.getElementById('certScore').textContent = total;
+  document.getElementById('certScore').style.color = color;
+  document.getElementById('certPct').textContent = (total/10).toFixed(1) + '%';
+  document.getElementById('certPct').style.color = color;
+  document.getElementById('certRange').textContent = rangeTxt;
+
+  // Floors
+  const capFloor = level === 'platinum' ? 300 : level === 'gold' ? 200 : level === 'silver' ? 150 : 100;
+  const perfFloor = level === 'platinum' ? 280 : level === 'gold' ? 200 : level === 'silver' ? 150 : 80;
+  const stakeFloor = level === 'platinum' ? 150 : level === 'gold' ? 100 : 0;
+  const capOk = capTotal >= capFloor;
+  const perfOk = state.perf >= perfFloor;
+  const stakeOk = level === 'platinum' || level === 'gold' ? state.stake >= stakeFloor : true;
+  document.getElementById('floorCapVal').textContent = capTotal + '/400';
+  document.getElementById('floorCapCheck').textContent = capOk ? '✅' : '❌';
+  document.getElementById('floorCapCheck').className = 'check ' + (capOk ? 'pass' : 'fail');
+  document.getElementById('floorPerfVal').textContent = state.perf + '/400';
+  document.getElementById('floorPerfCheck').textContent = perfOk ? '✅' : '❌';
+  document.getElementById('floorPerfCheck').className = 'check ' + (perfOk ? 'pass' : 'fail');
+  document.getElementById('floorStakeVal').textContent = state.stake + '/200';
+  document.getElementById('floorStakeCheck').textContent = stakeOk ? '✅' : '❌';
+  document.getElementById('floorStakeCheck').className = 'check ' + (stakeOk ? 'pass' : 'fail');
+
+  // Score bars
+  const bars = document.getElementById('scoreBars');
+  const dims = [
+    { label:'Capability', val:capTotal, max:400, color:'#4a9eff' },
+    { label:'Performance', val:state.perf, max:400, color:'#a855f7' },
+    { label:'Stakeholder', val:state.stake, max:200, color:'#10b981' },
+    { label:'TOTAL', val:total, max:1000, color },
+  ];
+  bars.innerHTML = dims.map(d => `
+    <div class="score-bar-wrap">
+      <div class="score-bar-label"><span>${d.label}</span><span style="color:${d.color}">${d.val} / ${d.max}</span></div>
+      <div class="score-bar-bg"><div class="score-bar-fill" style="width:${d.val/d.max*100}%;background:${d.color}"></div></div>
+    </div>`).join('');
+
+  // Ladder highlight
+  ['platinum','gold','silver','bronze'].forEach(l => {
+    const el = document.getElementById('ladder-'+l);
+    el.className = 'ladder-item' + (l === level ? ' active-level ' + l : '');
+  });
+
+  drawSpider(capTotal, level);
+}
+
+function drawSpider(capTotal, level) {
+  const canvas = document.getElementById('spiderChart');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0,0,W,H);
+
+  const cx = W/2, cy = H/2 - 10, R = Math.min(W,H)/2 - 60;
+  const n = CATS.length;
+  const angles = CATS.map((_,i) => -Math.PI/2 + (2*Math.PI*i/n));
+
+  // Grid rings: bronze=35%, silver=50%, gold=80%, platinum=100%
+  const rings = [
+    { pct:0.2,  label:'', color:'rgba(205,127,50,0.15)' },
+    { pct:0.35, label:'Bronze', color:'rgba(205,127,50,0.3)' },
+    { pct:0.50, label:'Silver', color:'rgba(192,192,192,0.3)' },
+    { pct:0.80, label:'Gold',   color:'rgba(255,215,0,0.3)' },
+    { pct:1.00, label:'Platinum', color:'rgba(229,228,226,0.3)' },
+  ];
+
+  rings.forEach(ring => {
+    ctx.beginPath();
+    angles.forEach((a,i) => {
+      const r = R * ring.pct;
+      const x = cx + r * Math.cos(a), y = cy + r * Math.sin(a);
+      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    });
+    ctx.closePath();
+    ctx.strokeStyle = ring.color;
+    ctx.lineWidth = ring.label ? 1.5 : 0.5;
+    ctx.setLineDash(ring.label ? [4,4] : []);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    if(ring.label) {
+      ctx.fillStyle = ring.color.replace('0.3','0.8');
+      ctx.font = '9px Segoe UI';
+      ctx.fillText(ring.label, cx + R*ring.pct*Math.cos(-Math.PI/2) - 20, cy + R*ring.pct*Math.sin(-Math.PI/2) - 4);
+    }
+  });
+
+  // Spokes
+  angles.forEach(a => {
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + R*Math.cos(a), cy + R*Math.sin(a));
+    ctx.strokeStyle = 'rgba(30,58,95,0.8)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  });
+
+  // Data polygon
+  const pts = CATS.map((cat, i) => {
+    const pct = state[cat.key] / cat.max;
+    return { x: cx + R*pct*Math.cos(angles[i]), y: cy + R*pct*Math.sin(angles[i]) };
+  });
+
+  const fillColors = { platinum:'rgba(229,228,226,0.2)', gold:'rgba(255,215,0,0.2)', silver:'rgba(192,192,192,0.2)', bronze:'rgba(205,127,50,0.2)', none:'rgba(100,100,100,0.2)' };
+  const strokeColors = { platinum:'#e5e4e2', gold:'#ffd700', silver:'#c0c0c0', bronze:'#cd7f32', none:'#555' };
+
+  ctx.beginPath();
+  pts.forEach((p,i) => i===0 ? ctx.moveTo(p.x,p.y) : ctx.lineTo(p.x,p.y));
+  ctx.closePath();
+  ctx.fillStyle = fillColors[level];
+  ctx.fill();
+  ctx.strokeStyle = strokeColors[level];
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // Dots
+  pts.forEach((p, i) => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 4, 0, 2*Math.PI);
+    ctx.fillStyle = CATS[i].color;
+    ctx.fill();
+    ctx.strokeStyle = '#0a0e1a';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  });
+
+  // Labels
+  CATS.forEach((cat, i) => {
+    const a = angles[i];
+    const lx = cx + (R+36)*Math.cos(a), ly = cy + (R+36)*Math.sin(a);
+    const pct = Math.round(state[cat.key]/cat.max*100);
+    ctx.font = 'bold 10px Segoe UI';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = CATS[i].color;
+    ctx.fillText(cat.label, lx, ly - 6);
+    ctx.font = '9px Segoe UI';
+    ctx.fillStyle = '#7a9bb5';
+    ctx.fillText(state[cat.key]+'/'+cat.max+' ('+pct+'%)', lx, ly + 7);
+  });
+}
+
+// Init
+buildSliders();
+loadPreset('platinum');
+</script>
+</body>
+</html>
