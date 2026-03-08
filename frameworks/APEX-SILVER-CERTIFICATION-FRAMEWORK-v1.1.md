@@ -1,5 +1,5 @@
 # APEX SILVER CERTIFICATION FRAMEWORK (v1.1)
-**Non-Production Environments — Operational Maturity**
+**Non-Production Environments... Operational Maturity**
 
 > **Changelog from v1.0:** "API Gateway Profile" renamed to "Cascading Risk Profile" for clarity. Evaluation period updated to 6 months. Probation Period (PP) and PIP remain 3 months.
 
@@ -9,8 +9,8 @@
 
 | Attribute | Detail |
 |---|---|
-| **Target Environment** | Non-Production (Dev, Test, Staging) — Advanced Readiness |
-| **Philosophy** | Operational maturity — teams demonstrate they can operate at production standards *before* going live. Silver practices in non-prod are what Gold demands in prod. |
+| **Target Environment** | Non-Production (Dev, Test, Staging), Advanced Readiness |
+| **Philosophy** | Operational maturity, teams demonstrate they can operate at production standards *before* going live. Silver practices in non-prod are what Gold demands in prod. |
 | **Score Range** | 351–500 points out of 1000 (35.1%–50%) |
 | **Prerequisite** | Must have achieved Bronze certification OR score ≥200 |
 | **Scoring Dimensions** | **2-Dimensional**: Capability (50%) + Performance (50%) |
@@ -19,9 +19,9 @@
 | **Performance Improvement Plan (PIP)** | 3 months |
 | **Validity** | 12 months with annual re-certification |
 
-> **Key Shift from Bronze → Silver:** Bronze is about having the *foundations* in place. Silver is about demonstrating those foundations *work consistently* at production-grade discipline — in a non-production environment. The Bronze nice-to-haves become Silver hard gates.
+> **Key Shift from Bronze → Silver:** Bronze is about having the *foundations* in place. Silver is about demonstrating those foundations *work consistently* at production-grade discipline, in a non-production environment. The Bronze nice-to-haves become Silver hard gates.
 
-> **Dimension Floor Rule:** A total score of 351–500 qualifies for Silver territory, but both dimension floors must be met independently. This ensures the score reflects genuine, balanced operational maturity — not excellence in one pillar masking a critical weakness in another. Think of it as passing each paper individually, not just on aggregate.
+> **Dimension Floor Rule:** A total score of 351–500 qualifies for Silver territory, but both dimension floors must be met independently. This ensures the score reflects genuine, balanced operational maturity, not excellence in one pillar masking a critical weakness in another. Think of it as passing each paper individually, not just on aggregate.
 > - Capability Score ≥175 pts
 > - Performance Score ≥175 pts
 > Failing either floor = No Silver Certification, regardless of total score.
@@ -42,11 +42,11 @@
 
 APEX does not use tier multipliers to move the certification finish line. A Silver application always needs 351–500 points regardless of its tier. Instead, tier differentiation is built into the journey through:
 
-1. **Complexity Classification** — Tier 0 presence automatically pushes an app to Complex via the Tier Composition criterion (3× weight, 15 pts max) — the heaviest weighted criterion in the system
-2. **Profile Weights** — Complex apps have category weights amplified for their risk profile. Framework admin can adjust weights with documented justification
-3. **Performance Thresholds within Categories** — Complex apps face stricter expectations across chaos success rates, incident resolution times, and monitoring coverage
-4. **Non-Negotiables** — Complex apps face more demanding hard gate requirements
-5. **Incident Penalties** — Severity classification hits harder on complex/high-tier apps
+1. **Complexity Classification:** Tier 0 presence automatically pushes an app to Complex via the Tier Composition criterion (3× weight, 15 pts max) — the heaviest weighted criterion in the system
+2. **Profile Weights:**  Complex apps have category weights amplified for their risk profile. Framework admin can adjust weights with documented justification
+3. **Performance Thresholds within Categories:** Complex apps face stricter expectations across chaos success rates, incident resolution times, and monitoring coverage
+4. **Non-Negotiables:** Complex apps face more demanding hard gate requirements
+5. **Incident Penalties:** Severity classification hits harder on complex/high-tier apps
 
 > **One universal finish line. Differentiation happens in how demanding the journey is to get there.**
 
@@ -81,7 +81,7 @@ Framework admin may override individual weights with documented justification.
 | 5 | Dependencies documented |
 | 6 | Owner identified |
 
-### New at Silver (7–10) — Former Bronze Nice-to-Haves, Now Mandatory
+### New at Silver (7–10): Former Bronze Nice-to-Haves, Now Mandatory
 
 | # | Requirement | Simple | Mid-Tier | Complex |
 |---|---|---|---|---|
@@ -299,7 +299,7 @@ Framework admin may override individual weights with documented justification.
 | 12–17 | Automated with manual rollback | Most services automated | Partial tier automation |
 | 0–11 | Semi-automated or manual | Inconsistent | Inconsistent |
 
-**Silver Minimum: 18 pts (Non-Negotiable #9 — fully automated with tested rollback)**
+**Silver Minimum: 18 pts (Non-Negotiable #9: fully automated with tested rollback)**
 
 #### 5.3 Auto-Remediation Capabilities (10 pts) × Profile Weight
 
@@ -396,7 +396,7 @@ Framework admin may override individual weights with documented justification.
 
 ## DIMENSION 2: PERFORMANCE SCORE (500 points max)
 
-> Silver performance measures **non-production execution at production-grade discipline** — faster response times, higher success rates, and stricter thresholds than Bronze across all categories.
+> Silver performance measures **non-production execution at production-grade discipline**, faster response times, higher success rates, and stricter thresholds than Bronze across all categories.
 
 ---
 
@@ -533,7 +533,7 @@ Framework admin may override individual weights with documented justification.
 | 18–26 | 5–8 incidents | 6–8 incidents | 9–10 incidents |
 | 0–17 | >8 incidents | >8 incidents | >10 incidents |
 
-**Silver Minimum: 18 pts (Non-Negotiable #10 — ≤8/month for Simple/Mid, ≤10 for Complex)**
+**Silver Minimum: 18 pts (Non-Negotiable #10, ≤8/month for Simple/Mid, ≤10 for Complex)**
 
 ---
 
@@ -588,7 +588,7 @@ Framework admin may override individual weights with documented justification.
 | Performance Score | ≥175 pts | 500 pts |
 | **Total Score** | **351–500 pts** | **1000 pts** |
 
-> **Dimension Floor Rule:** Scoring 351+ total qualifies for Silver territory, but both floors must be met independently. An application with excellent chaos game day scores but poor capability documentation cannot use performance to compensate — both pillars must stand on their own. Think of it as passing each paper individually, not just on aggregate.
+> **Dimension Floor Rule:** Scoring 351+ total qualifies for Silver territory, but both floors must be met independently. An application with excellent chaos game day scores but poor capability documentation cannot use performance to compensate, both pillars must stand on their own. Think of it as passing each paper individually, not just on aggregate.
 
 ### Prerequisite
 Must hold active Bronze Certification OR have a total score ≥200.
@@ -636,14 +636,14 @@ Step 7: Full Certification
 
 ## PROBATION PERIOD (PP) & PERFORMANCE IMPROVEMENT PLAN (PIP)
 
-### Probation Period — 3 Months
+### Probation Period: 3 Months
 - **Status:** APEX Silver (Provisional)
 - Maintain all 10 non-negotiables
 - Score remains ≥351 with both dimension floors met
 - Monthly check-ins with framework admin
 - **Outcome:** ✅ Full Silver Certified | ❌ Extend PP (once) or downgrade to Bronze
 
-### Performance Improvement Plan — 3 Months
+### Performance Improvement Plan: 3 Months
 Triggered by:
 - Score drops below 351
 - Either dimension floor fails
@@ -684,7 +684,7 @@ Triggered by:
 
 ## EXAMPLE SCORING SCENARIOS
 
-### Example 1: Simple App — Lower Silver (365 pts) ✅
+### Example 1: Simple App, Lower Silver (365 pts) ✅
 **Application:** Customer Portal | **Complexity:** Simple | **Profile:** Standard
 
 | Dimension | Category | Score |
@@ -707,7 +707,7 @@ Triggered by:
 
 ---
 
-### Example 2: Mid-Tier App — Strong Silver (475 pts) ✅
+### Example 2: Mid-Tier App, Strong Silver (475 pts) ✅
 **Application:** Payment Processing Platform | **Complexity:** Mid-Tier | **Profile:** High-Velocity
 
 | Dimension | Score |
@@ -721,7 +721,7 @@ Triggered by:
 
 ---
 
-### Example 3: Mid-Tier App — Silver Denied (Performance Floor Fail) ✗
+### Example 3: Mid-Tier App, Silver Denied (Performance Floor Fail) ✗
 **Application:** Logistics Management | **Complexity:** Mid-Tier | **Profile:** Stable Enterprise
 
 | Dimension | Score |
@@ -730,7 +730,7 @@ Triggered by:
 | Performance | **158/500** ← Below 175 floor |
 | **Total** | **378/1000** (Silver range) |
 
-**Result:** Silver DENIED — Performance dimension below floor.
+**Result:** Silver DENIED : Performance dimension below floor.
 Message: *"Your total score reaches Silver territory, but performance outcomes fall below the floor. Focus on: chaos test success rate (currently 58%), game day completion, and reducing non-prod incidents to ≤8/month."*
 
 ---
@@ -738,7 +738,7 @@ Message: *"Your total score reaches Silver territory, but performance outcomes f
 ### Example 4: Non-Negotiable Failure ✗
 **Application:** Analytics Dashboard | **Complexity:** Mid-Tier | **Profile:** Standard
 
-**Total Score: 410** (Silver range) — BUT:
+**Total Score: 410** (Silver range), BUT:
 - ✗ DR tested only annually, not quarterly (Non-Negotiable #7)
 - ✗ On-call coverage: 1 person only (Non-Negotiable #8)
 
@@ -785,6 +785,6 @@ Required actions: Implement quarterly DR testing, establish 2-person on-call rot
 
 ---
 
-*APEX Silver Certification Framework v1.1 — Non-Production Operational Maturity*
-*Builds on: APEX Bronze v1.1 — Non-Production Foundational Resilience*
-*Next Level: APEX Gold — Production Engineering Excellence*
+*APEX Silver Certification Framework v1.1 : Non-Production Operational Maturity*   
+*Builds on: APEX Bronze v1.1 : Non-Production Foundational Resilience*  
+*Next Level: APEX Gold : Production Engineering Excellence*
