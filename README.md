@@ -25,7 +25,7 @@
 
 **APEX** is a comprehensive, practical, and implementable **Resilience Maturity Model** designed for modern software engineering organisations. It provides a structured, measurable path from foundational resilience in non-production environments all the way to autonomous, self-healing production systems.
 
-Unlike theoretical frameworks, APEX is built for real-world engineering teams — with hard gates that prevent gaming, a dynamic scoring engine that responds to live incidents, and a 3-dimensional scoring model that captures not just what you *can* do, but what you *actually deliver* and how your *stakeholders experience* it.
+Unlike theoretical frameworks, APEX is built for real-world engineering teams with hard gates that prevent gaming, a dynamic scoring engine that responds to live incidents, and a 3-dimensional scoring model that captures not just what you *can* do, but what you *actually deliver* and how your *stakeholders experience* it.
 
 > *"Reaching the APEX of Resilience"*
 
@@ -35,10 +35,10 @@ Unlike theoretical frameworks, APEX is built for real-world engineering teams �
 
 | Level | Environment | Score Range | Dimensions | Philosophy |
 |-------|-------------|-------------|------------|------------|
-| 🥉 **Bronze** | Non-Production | 200–350 / 1000 | Capability + Performance | Foundational — get started |
-| 🥈 **Silver** | Non-Production | 351–500 / 1000 | Capability + Performance | Operational maturity — production-grade discipline |
-| 🥇 **Gold** | Production | 501–800 / 1000 | Capability + Performance + Stakeholder | Engineering excellence — real production resilience |
-| 🏆 **Platinum** | Production | 801–1000 / 1000 | Capability + Performance + Stakeholder | Autonomous resilience — systems defend themselves |
+| 🥉 **Bronze** | Non-Production | 200–350 / 1000 | Capability + Performance | Foundational: get started |
+| 🥈 **Silver** | Non-Production | 351–500 / 1000 | Capability + Performance | Operational maturity: production-grade discipline |
+| 🥇 **Gold** | Production | 501–800 / 1000 | Capability + Performance + Stakeholder | Engineering excellence: real production resilience |
+| 🏆 **Platinum** | Production | 801–1000 / 1000 | Capability + Performance + Stakeholder | Autonomous resilience: systems defend themselves |
 
 ---
 
@@ -84,7 +84,7 @@ Culture & Org Maturity ←    APEX     → Chaos Engineering (80 pts)
 
 ## 🔒 Non-Negotiables System
 
-Every certification level has hard-gate non-negotiables — criteria that, if failed, deny certification regardless of total score. This prevents teams from gaming the system by scoring high in easy categories while ignoring critical gaps.
+Every certification level has hard-gate non-negotiables, criteria that, if failed, deny certification regardless of total score. This prevents teams from gaming the system by scoring high in easy categories while ignoring critical gaps.
 
 **Example Non-Negotiables:**
 - **Bronze**: DR plan documented, basic monitoring >50%, rollback capability exists
@@ -98,7 +98,7 @@ Every certification level has hard-gate non-negotiables — criteria that, if fa
 
 ## ⚡ Dynamic Scoring & Incident Impact
 
-APEX scores are not static — live incidents modify certification status in real time:
+APEX scores are not static, live incidents modify certification status in real time:
 
 | Event | Impact |
 |-------|--------|
@@ -242,9 +242,9 @@ This framework was designed and developed as a practical, implementable alternat
 
 ## 📜 License
 
-MIT License — Feel free to adapt this framework for your organisation with attribution.
+MIT License: Feel free to adapt this framework for your organisation with attribution.
 
 ---
 
-*APEX Resilience Framework — From Reactive Firefighting to Autonomous Resilience*
-*Bronze → Silver → Gold → Platinum — Reaching the APEX of Resilience Engineering*
+*APEX Resilience Framework : From Reactive Firefighting to Autonomous Resilience*
+*Bronze → Silver → Gold → Platinum : Reaching the APEX of Resilience Engineering*
