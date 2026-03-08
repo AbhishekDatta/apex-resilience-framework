@@ -188,7 +188,7 @@ Each application is assigned a **profile** that applies weight multipliers to re
 | High-Velocity | Deployment automation (2x), Chaos testing (1.5x) | SaaS, frequent-release apps |
 | Stable Enterprise | DR & BC (1.5x), Architecture (1.5x) | Core banking, ERP |
 | Data-Intensive | Data complexity (2x), Backup strategy (1.5x) | ETL pipelines, analytics |
-| API Gateway | Dependency management (2x), Circuit breakers (1.5x) | Integration hubs, API platforms |
+| Cascading Risk | Dependency management (2x), Circuit breakers (1.5x) | Integration hubs, API platforms |
 | Standard | All weights 1x | Default |
 
 ---
