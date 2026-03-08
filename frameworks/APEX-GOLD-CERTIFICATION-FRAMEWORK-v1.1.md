@@ -1,5 +1,5 @@
 # APEX GOLD CERTIFICATION FRAMEWORK (v1.1)
-**Production Environments — Engineering Excellence**
+**Production Environments... Engineering Excellence**
 
 > **Changelog from v1.0:** Non-Negotiable #15 updated — Zero Sev 0 window changed from trailing 12 months to trailing 6 months. Production chaos engineering frequency updated from monthly to quarterly. Gold-to-Platinum transition table updated accordingly.
 
@@ -57,11 +57,11 @@
 
 APEX does not use tier multipliers to move the certification finish line. A Gold application always needs 501–800 points regardless of its tier. Instead, tier differentiation is built into the journey through:
 
-1. **Complexity Classification** — Tier 0 presence automatically pushes an app to Complex via the Tier Composition criterion (3× weight, 15 pts max) — the heaviest weighted criterion in the system
-2. **Profile Weights** — Complex apps have category weights amplified for their risk profile. Framework admin can adjust weights with documented justification
-3. **Performance Thresholds within Categories** — Complex apps face stricter expectations across chaos success rates, incident resolution times, and monitoring coverage
-4. **Non-Negotiables** — Complex apps face more demanding hard gate requirements
-5. **Incident Penalties** — Severity classification hits harder on complex/high-tier apps
+1. **Complexity Classification...**   Tier 0 presence automatically pushes an app to Complex via the Tier Composition criterion (3× weight, 15 pts max) — the heaviest weighted criterion in the system
+2. **Profile Weights...**  Complex apps have category weights amplified for their risk profile. Framework admin can adjust weights with documented justification
+3. **Performance Thresholds within Categories...**   Complex apps face stricter expectations across chaos success rates, incident resolution times, and monitoring coverage
+4. **Non-Negotiables...**   Complex apps face more demanding hard gate requirements
+5. **Incident Penalties...**   Severity classification hits harder on complex/high-tier apps
 
 > **One universal finish line. Differentiation happens in how demanding the journey is to get there.**
 
@@ -225,7 +225,7 @@ All Bronze + Silver non-negotiables must remain satisfied.
 
 **Gold Minimum: 18 pts**
 
-#### 3.4 Post-Incident Reviews — Blameless Culture (21 pts) × Profile Weight
+#### 3.4 Post-Incident Reviews : Blameless Culture (21 pts) × Profile Weight
 
 | Points | Simple | Mid-Tier | Complex |
 |---|---|---|---|
@@ -288,7 +288,7 @@ All Bronze + Silver non-negotiables must remain satisfied.
 
 ### 5. AUTOMATION & SELF-HEALING (44 pts)
 
-#### 5.1 Infrastructure as Code — Production (16 pts) × Profile Weight
+#### 5.1 Infrastructure as Code : Production (16 pts) × Profile Weight
 
 | Points | Simple | Mid-Tier | Complex |
 |---|---|---|---|
@@ -336,7 +336,7 @@ All Bronze + Silver non-negotiables must remain satisfied.
 
 **Gold Minimum: 7 pts (Multi-AZ mandatory for Tier 0–2)**
 
-#### 6.2 Dependency Resilience — Circuit Breakers & Bulkheads (8 pts) × Profile Weight
+#### 6.2 Dependency Resilience : Circuit Breakers & Bulkheads (8 pts) × Profile Weight
 
 | Points | Simple | Mid-Tier | Complex |
 |---|---|---|---|
@@ -347,7 +347,7 @@ All Bronze + Silver non-negotiables must remain satisfied.
 
 **Gold Minimum: 5 pts**
 
-#### 6.3 Data Resilience — Multi-Region & Integrity (6 pts) × Profile Weight
+#### 6.3 Data Resilience : Multi-Region & Integrity (6 pts) × Profile Weight
 
 | Points | Simple | Mid-Tier | Complex |
 |---|---|---|---|
@@ -420,7 +420,7 @@ All Bronze + Silver non-negotiables must remain satisfied.
 
 ### 1. PRODUCTION INCIDENT PERFORMANCE (160 pts)
 
-#### 1.1 Production MTTD — Mean Time to Detect (50 pts) × Profile Weight
+#### 1.1 Production MTTD : Mean Time to Detect (50 pts) × Profile Weight
 
 | Points | Simple | Mid-Tier | Complex |
 |---|---|---|---|
@@ -431,7 +431,7 @@ All Bronze + Silver non-negotiables must remain satisfied.
 
 **Gold Minimum: 20 pts (Non-Negotiable #13)**
 
-#### 1.2 Production MTTR — Mean Time to Resolve (50 pts) × Profile Weight
+#### 1.2 Production MTTR : Mean Time to Resolve (50 pts) × Profile Weight
 
 | Points | Simple | Mid-Tier | Complex |
 |---|---|---|---|
@@ -784,7 +784,7 @@ Step 7: Full Certification
 
 ## PROBATION PERIOD (PP) & PERFORMANCE IMPROVEMENT PLAN (PIP)
 
-### Probation Period — 3 Months
+### Probation Period : 3 Months
 - **Status:** APEX Gold (Provisional)
 - Maintain all 15 non-negotiables
 - No Sev 0 incidents during probation
@@ -792,7 +792,7 @@ Step 7: Full Certification
 - Monthly health checks with framework admin
 - **Outcome:** ✅ Full Gold Certified | ❌ Extend PP (once) or downgrade to Silver
 
-### Performance Improvement Plan — 3 Months
+### Performance Improvement Plan : 3 Months
 Triggered by:
 - Total score drops below 501
 - Any dimension floor fails
@@ -835,7 +835,7 @@ Triggered by:
 
 ## EXAMPLE SCORING SCENARIOS
 
-### Example 1: Mid-Tier App — Gold Denied (Stakeholder Floor) ✗
+### Example 1: Mid-Tier App : Gold Denied (Stakeholder Floor) ✗
 **Application:** E-Commerce Platform | **Complexity:** Mid-Tier | **Profile:** Standard
 
 | Dimension | Score |
@@ -845,12 +845,12 @@ Triggered by:
 | Stakeholder | 100/200 ← Below floor |
 | **Total** | **515/1000** |
 
-**Result:** Gold DENIED — Stakeholder floor not met despite total of 515.
+**Result:** Gold DENIED : Stakeholder floor not met despite total of 515.
 Message: *"Strong capability and performance, but stakeholder experience falls below the ≥120 floor. Focus on: NPS improvement, proactive customer communication, and SRE satisfaction scores."*
 
 ---
 
-### Example 2: Mid-Tier App — Gold Certified (620 pts) ✅
+### Example 2: Mid-Tier App : Gold Certified (620 pts) ✅
 **Application:** E-Commerce Platform (6 months later) | **Complexity:** Mid-Tier | **Profile:** Standard
 
 | Dimension | Score |
@@ -865,7 +865,7 @@ Message: *"Strong capability and performance, but stakeholder experience falls b
 
 ---
 
-### Example 3: Complex Tier 0 — Strong Gold (742 pts) ✅
+### Example 3: Complex Tier 0 : Strong Gold (742 pts) ✅
 **Application:** Banking Payment System | **Complexity:** Complex | **Profile:** Stable Enterprise
 
 | Dimension | Score |
@@ -885,7 +885,7 @@ Message: *"Strong capability and performance, but stakeholder experience falls b
 
 Had 1 Sev 0 incident 4 months ago in production (within trailing 6 months).
 
-**Result:** Capped at Silver — Non-Negotiable #15 override.
+**Result:** Capped at Silver : Non-Negotiable #15 override.
 Gold re-application eligible 6 months from incident date.
 
 ---
@@ -937,6 +937,6 @@ Gold re-application eligible 6 months from incident date.
 
 ---
 
-*APEX Gold Certification Framework v1.1 — Production Engineering Excellence*
-*Builds on: APEX Bronze v1.1 (Non-Prod Foundational) | APEX Silver v1.1 (Non-Prod Advanced)*
-*Next: APEX Platinum v1.0 — Autonomous Resilience*
+*APEX Gold Certification Framework v1.1 : Production Engineering Excellence*  
+*Builds on: APEX Bronze v1.1 (Non-Prod Foundational) | APEX Silver v1.1 (Non-Prod Advanced)*   
+*Next: APEX Platinum v1.0 : Autonomous Resilience*
