@@ -1,5 +1,5 @@
 # APEX BRONZE CERTIFICATION FRAMEWORK (v1.1)
-**Non-Production Environments — Foundational Resilience**
+**Non-Production Environments... Foundational Resilience**
 
 > **Changelog from v1.0:** "API Gateway Profile" renamed to "Cascading Risk Profile" for clarity. Evaluation period updated to 6 months. Probation Period (PP) and PIP remain 3 months.
 
@@ -10,16 +10,16 @@
 | Attribute | Detail |
 |---|---|
 | **Target Environment** | Non-Production (Dev, Test, Staging) |
-| **Philosophy** | Low barrier to entry — foundational resilience capabilities. Teams should be able to achieve Bronze without it becoming a burden alongside existing delivery commitments. |
+| **Philosophy** | Low barrier to entry, foundational resilience capabilities. Teams should be able to achieve Bronze without it becoming a burden alongside existing delivery commitments. |
 | **Score Range** | 200–350 points out of 1000 (20%–35%) |
-| **Prerequisite** | None — this is the entry point |
+| **Prerequisite** | None, this is the entry point |
 | **Scoring Dimensions** | **2-Dimensional**: Capability (50%) + Performance (50%) |
 | **Evaluation Period** | 6 months |
 | **Probation Period (PP)** | 3 months → Full Certification |
 | **Performance Improvement Plan (PIP)** | 3 months |
 | **Validity** | 12 months with annual re-certification |
 
-> **Dimension Floor Rule:** A total score of 200–350 qualifies for Bronze territory, but both dimension floors must be met independently. This ensures the score reflects genuine, balanced capability — not strength in one area masking a critical gap in another. Think of it as passing each paper individually, not just on aggregate.
+> **Dimension Floor Rule:** A total score of 200–350 qualifies for Bronze territory, but both dimension floors must be met independently. This ensures the score reflects genuine, balanced capability, not strength in one area masking a critical gap in another. Think of it as passing each paper individually, not just on aggregate.
 > - Capability Score ≥100 pts
 > - Performance Score ≥100 pts
 > Failing either floor = No Bronze Certification, regardless of total score.
@@ -56,11 +56,11 @@ Before assessment, classify the application using the 8-Criteria Weighted Scorin
 
 APEX does not use tier multipliers to move the certification finish line. A Bronze application always needs 200–350 points regardless of its tier. Instead, tier differentiation is built into the journey through:
 
-1. **Complexity Classification** — Tier 0 presence automatically pushes an app to Complex via the Tier Composition criterion (3× weight, 15 pts max) — the heaviest weighted criterion in the system
-2. **Profile Weights** — Complex apps have category weights amplified for their risk profile. Framework admin can adjust weights with documented justification
-3. **Performance Thresholds within Categories** — Complex apps face stricter expectations across chaos success rates, incident resolution times, and monitoring coverage
-4. **Non-Negotiables** — Complex apps face more demanding hard gate requirements
-5. **Incident Penalties** — Severity classification hits harder on complex/high-tier apps
+1. **Complexity Classification:** Tier 0 presence automatically pushes an app to Complex via the Tier Composition criterion (3× weight, 15 pts max), the heaviest weighted criterion in the system
+2. **Profile Weights:** — Complex apps have category weights amplified for their risk profile. Framework admin can adjust weights with documented justification
+3. **Performance Thresholds within Categories:** Complex apps face stricter expectations across chaos success rates, incident resolution times, and monitoring coverage
+4. **Non-Negotiables:** Complex apps face more demanding hard gate requirements
+5. **Incident Penalties:** Severity classification hits harder on complex/high-tier apps
 
 > **One universal finish line. Differentiation happens in how demanding the journey is to get there.**
 
@@ -95,7 +95,7 @@ Assign a standardized profile with weight multipliers. Framework admin may overr
 
 > Failure of ANY non-negotiable = No Bronze Certification, regardless of score.
 
-> **Note:** Incident process documentation, on-call coverage, deployment pipeline, and incident volume limits are **nice-to-haves** at Bronze — they are scored and contribute points but are not hard gates. These become mandatory at Silver.
+> **Note:** Incident process documentation, on-call coverage, deployment pipeline, and incident volume limits are **nice-to-haves** at Bronze, they are scored and contribute points but are not hard gates. These become mandatory at Silver.
 
 ---
 
@@ -145,7 +145,7 @@ Assign a standardized profile with weight multipliers. Framework admin may overr
 | 6–11 | Tested 12–18 months ago | Incomplete coverage | Single tier only |
 | 0–5 | >18 months or never | Never or >18 months | Never or incomplete |
 
-**Bronze Minimum: 12 pts (Non-Negotiable #1 — tested within 12 months)**
+**Bronze Minimum: 12 pts (Non-Negotiable #1, tested within 12 months)**
 
 ---
 
@@ -160,7 +160,7 @@ Assign a standardized profile with weight multipliers. Framework admin may overr
 | 12–19 | Tool identified, planning installation | Evaluating options | Evaluating options |
 | 0–11 | No chaos capability | None | None |
 
-**Bronze Minimum: 20 pts (Non-Negotiable #4 — tool must be installed)**
+**Bronze Minimum: 20 pts (Non-Negotiable #4, tool must be installed)**
 
 #### 2.2 Chaos Testing Coverage (35 pts) × Profile Weight
 
@@ -171,7 +171,7 @@ Assign a standardized profile with weight multipliers. Framework admin may overr
 | 10–19 | 1 scenario planned/tested | 1 scenario or planned | Single tier, 1–2 scenarios |
 | 0–9 | No tests executed | None | None |
 
-**Bronze Minimum: 10 pts (Non-Negotiable #4 — at least 1 test executed)**
+**Bronze Minimum: 10 pts (Non-Negotiable #4, at least 1 test executed)**
 
 #### 2.3 Game Day Participation (35 pts) × Profile Weight
 
@@ -197,7 +197,7 @@ Assign a standardized profile with weight multipliers. Framework admin may overr
 | 12–19 | Minimal runbook, outdated | Generic or incomplete | Generic or single tier |
 | 0–11 | Undocumented or tribal knowledge | None or severely outdated | None |
 
-**Bronze Target: 12+ pts (documentation encouraged — becomes mandatory at Silver)**
+**Bronze Target: 12+ pts (documentation encouraged, becomes mandatory at Silver)**
 
 #### 3.2 On-Call Setup (25 pts) × Profile Weight
 
@@ -208,7 +208,7 @@ Assign a standardized profile with weight multipliers. Framework admin may overr
 | 10–17 | 1 person identified, contact accessible | Single person per service | Unclear tier ownership |
 | 0–9 | Ad-hoc or unclear | None | None |
 
-**Bronze Target: 10+ pts (encouraged — becomes mandatory at Silver)**
+**Bronze Target: 10+ pts (encouraged, becomes mandatory at Silver)**
 
 #### 3.3 Incident Tracking & Logging (30 pts) × Profile Weight
 
@@ -245,7 +245,7 @@ Assign a standardized profile with weight multipliers. Framework admin may overr
 | 15–23 | Basic infra + app, 50% coverage | 50–60% coverage | 40–50% tier coverage |
 | 0–14 | Infrastructure only or <50% | <50% coverage | <40% coverage |
 
-**Bronze Minimum: 15 pts (≥50% coverage — Non-Negotiable #3)**
+**Bronze Minimum: 15 pts (≥50% coverage, Non-Negotiable #3)**
 
 #### 4.2 Logging (30 pts) × Profile Weight
 
@@ -293,7 +293,7 @@ Assign a standardized profile with weight multipliers. Framework admin may overr
 | 12–19 | Semi-automated (build auto, deploy manual) | Semi-automated | Semi-automated coordination |
 | 0–11 | Manual deployments | Manual | Manual |
 
-**Bronze Target: 12+ pts (encouraged — becomes mandatory at Silver)**
+**Bronze Target: 12+ pts (encouraged, becomes mandatory at Silver)**
 
 ---
 
@@ -308,7 +308,7 @@ Assign a standardized profile with weight multipliers. Framework admin may overr
 | 6–9 | Basic list of dependencies | Partial mapping | Partial tier view |
 | 0–5 | Undocumented or incomplete | Severely incomplete | Missing cross-tier view |
 
-**Bronze Minimum: 6 pts (Non-Negotiable #5 — dependencies must be documented)**
+**Bronze Minimum: 6 pts (Non-Negotiable #5, dependencies must be documented)**
 
 #### 6.2 Environment Parity (15 pts) × Profile Weight
 
@@ -334,7 +334,7 @@ Assign a standardized profile with weight multipliers. Framework admin may overr
 | 6–9 | Owner identified but informal | Some ambiguity | Some fragmentation |
 | 0–5 | Unclear ownership | Very unclear | Highly fragmented |
 
-**Bronze Minimum: 6 pts (Non-Negotiable #6 — owner must be identified)**
+**Bronze Minimum: 6 pts (Non-Negotiable #6, owner must be identified)**
 
 #### 7.2 Documentation Quality (10 pts) × Profile Weight
 
@@ -602,14 +602,14 @@ Step 6: Full Certification
 
 ## PROBATION PERIOD (PP) & PERFORMANCE IMPROVEMENT PLAN (PIP)
 
-### Probation Period — 3 Months
+### Probation Period: 3 Months
 - **Status:** APEX Bronze (Provisional)
 - Maintain all 6 non-negotiables
 - Score remains ≥200 with both dimension floors met
 - Monthly check-ins with framework admin
 - **Outcome:** ✅ Full Bronze Certified | ❌ Extend PP (once) or No Certification
 
-### Performance Improvement Plan — 3 Months
+### Performance Improvement Plan: 3 Months
 Triggered by:
 - Score drops below 200
 - Either dimension floor fails
@@ -649,7 +649,7 @@ Triggered by:
 
 ## EXAMPLE SCORING SCENARIOS
 
-### Example 1: Simple App — Minimal Bronze (220 pts) ✅
+### Example 1: Simple App: Minimal Bronze (220 pts) ✅
 **Application:** Internal Dashboard | **Complexity:** Simple | **Profile:** Standard
 
 | Dimension | Category | Score |
@@ -672,7 +672,7 @@ Triggered by:
 
 ---
 
-### Example 2: Mid-Tier App — Strong Bronze (305 pts) ✅
+### Example 2: Mid-Tier App: Strong Bronze (305 pts) ✅
 **Application:** E-Commerce Checkout | **Complexity:** Mid-Tier | **Profile:** High-Velocity
 
 | Dimension | Score |
@@ -682,11 +682,11 @@ Triggered by:
 | **Total** | **305/1000** |
 
 **Non-Negotiables:** ✅ All 6 passed
-**Result:** Bronze Certified (strong foundation — Silver preparation recommended)
+**Result:** Bronze Certified (strong foundation, Silver preparation recommended)
 
 ---
 
-### Example 3: Mid-Tier App — Bronze Denied ✗
+### Example 3: Mid-Tier App: Bronze Denied ✗
 **Application:** Inventory Management System | **Complexity:** Mid-Tier | **Profile:** Standard
 
 | Dimension | Score |
@@ -738,5 +738,5 @@ Triggered by:
 
 ---
 
-*APEX Bronze Certification Framework v1.1 — Non-Production Foundational Resilience*
+*APEX Bronze Certification Framework v1.1 — Non-Production Foundational Resilience*   
 *Next Level: APEX Silver v1.1 — Non-Production Operational Maturity*
