@@ -1,5 +1,5 @@
 # 🏆 APEX Resilience Framework
-### *Application Performance & EXcellence — Enterprise Resilience Maturity Model*
+### *Application Performance & EXcellence... Enterprise Resilience Maturity Model*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Framework Version](https://img.shields.io/badge/Framework-v1.1-blue.svg)]()
