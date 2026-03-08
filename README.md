@@ -246,5 +246,5 @@ MIT License: Feel free to adapt this framework for your organisation with attrib
 
 ---
 
-*APEX Resilience Framework : From Reactive Firefighting to Autonomous Resilience*
+*APEX Resilience Framework : From Reactive Firefighting to Autonomous Resilience*  
 *Bronze → Silver → Gold → Platinum : Reaching the APEX of Resilience Engineering*
