@@ -57,7 +57,7 @@
 
 APEX does not use tier multipliers to move the certification finish line. A Gold application always needs 501–800 points regardless of its tier. Instead, tier differentiation is built into the journey through:
 
-1. **Complexity Classification...**   Tier 0 presence automatically pushes an app to Complex via the Tier Composition criterion (3× weight, 15 pts max) — the heaviest weighted criterion in the system
+1. **Complexity Classification...**   Tier 0 presence automatically pushes an app to Complex via the Tier Composition criterion (3× weight, 15 pts max), the heaviest weighted criterion in the system
 2. **Profile Weights...**  Complex apps have category weights amplified for their risk profile. Framework admin can adjust weights with documented justification
 3. **Performance Thresholds within Categories...**   Complex apps face stricter expectations across chaos success rates, incident resolution times, and monitoring coverage
 4. **Non-Negotiables...**   Complex apps face more demanding hard gate requirements
