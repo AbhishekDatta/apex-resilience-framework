@@ -260,6 +260,9 @@ development and is not covered by this MIT License.
 **Future Versions:** v2.0 onwards will carry more restrictive licensing. 
 See [DISCLAIMER.md](./DISCLAIMER.md) for full terms.
 
+The original author retains all rights to create derivative works, 
+commercial implementations, and successor products based on this work.
+
 For commercial licensing enquiries: contactabhishekdatta@gmail.com
 ---
 
