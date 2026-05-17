@@ -1,21 +1,28 @@
 # 🏆 APEX Resilience Framework
 ### *Application Performance & EXcellence... Enterprise Resilience Maturity Model*
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT v1.1](https://img.shields.io/badge/License-MIT%20v1.1%20Reference%20Only-yellow.svg)](./DISCLAIMER.md)
 [![Framework Version](https://img.shields.io/badge/Framework-v1.1-blue.svg)]()
 [![Certifications](https://img.shields.io/badge/Certifications-Bronze%20%7C%20Silver%20%7C%20Gold%20%7C%20Platinum-gold.svg)]()
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)]()
+[![Status](https://img.shields.io/badge/Status-Framework%20v1.1%20Stable-blue.svg)]()
 
 ---
 
-> ⚠️ **IMPORTANT DISCLAIMER**
-> This framework is provided as a reference model and educational resource only.
-> It does not guarantee any specific resilience outcomes. Any implementation in
-> production environments is entirely at your own risk. The author accepts no
-> liability for incidents, outages, data loss, or any other damage arising from
-> use of this framework. Chaos engineering practices in particular carry inherent
-> production risk and must not be attempted without proper safeguards.
-> **See [DISCLAIMER.md](./DISCLAIMER.md) for full terms before using this framework.**
+> ⚠️ **IMPORTANT: LICENSE SCOPE & IP NOTICE**
+> 
+> The MIT License in this repository applies to the reference documentation 
+> and spider chart tool in this repository only. It does **not** cover 
+> commercial platform implementations of this methodology.
+>
+> This framework is provided as a reference model and educational resource. 
+> It does not guarantee any specific resilience outcomes. Any implementation 
+> in production environments is entirely at your own risk. The author accepts 
+> no liability for incidents, outages, data loss, or any other damage.
+> Chaos engineering practices carry inherent production risk and must not 
+> be attempted without proper safeguards.
+>
+> **See [DISCLAIMER.md](./DISCLAIMER.md) for full IP, licensing, and 
+> production use terms before using this framework.**
 
 ---
 
@@ -242,8 +249,18 @@ This framework was designed and developed as a practical, implementable alternat
 
 ## 📜 License
 
-MIT License: Feel free to adapt this framework for your organisation with attribution.
+**v1.1 Reference Implementation:** MIT License — the reference documentation 
+and spider chart tool in this repository may be freely adapted with attribution.
 
+**Methodology & Commercial Use:** The APEX framework methodology, scoring 
+engine design, and certification structure are the original intellectual 
+property of the author. A commercial platform implementation is under active 
+development and is not covered by this MIT License.
+
+**Future Versions:** v2.0 onwards will carry more restrictive licensing. 
+See [DISCLAIMER.md](./DISCLAIMER.md) for full terms.
+
+For commercial licensing enquiries: contactabhishekdatta@gmail.com
 ---
 
 *APEX Resilience Framework : From Reactive Firefighting to Autonomous Resilience*  
