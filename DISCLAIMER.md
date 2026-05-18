@@ -49,13 +49,48 @@ knowledge, including but not limited to:
 - Industry-standard incident management practices (e.g., PagerDuty, Atlassian documentation)
 - Publicly available research on MTTD, MTTR, and operational resilience
 
-## Copyright Notice
+## Copyright & License Scope
 
-Copyright (c) 2026 Abhishek Datta. All rights reserved.
+Copyright (c) 2026 Abhishek Datta.
 
-The APEX framework name, structure, scoring methodology, certification ladder design,
-non-negotiables system, 3-dimensional scoring model, and associated documentation are
-original intellectual property of the author.
+**What the MIT License covers in this repository:**
+The MIT License applies exclusively to the specific reference documentation 
+files and the interactive spider chart tool (`tools/apex-spider-chart.html`) 
+in this repository as they existed at the time of publication. It permits 
+free use, adaptation, and distribution of these specific files with attribution.
+
+**What the MIT License does NOT cover:**
+
+The following are proprietary intellectual property of the author and are 
+NOT subject to the MIT License granted herein:
+
+- The APEX framework name and brand identity
+- The framework methodology as a commercial product or service offering
+- Any production-grade platform implementation of this methodology
+- Any software system, API, or service that implements this scoring engine 
+  at scale for commercial purposes
+- Future versions of this framework (v2.0 onwards will carry separate licensing)
+
+**Methodology Notice:**
+The APEX scoring methodology, 3-dimensional assessment model, certification 
+tier structure, non-negotiables system, dynamic incident penalty engine, 
+Probation Period mechanics, Performance Improvement Plan structure, 
+complexity classification matrix, and application profile weighting system 
+constitute the original intellectual work of the author. While copyright 
+law does not protect abstract methodologies as such, the author asserts 
+moral rights of authorship and original creation over these elements.
+
+**Commercial Implementation:**
+A production-grade, platform-integrated implementation of this methodology 
+is under active development by the author. This public repository serves 
+solely as a reference specification and demonstration tool. The commercial 
+implementation is not subject to the MIT License.
+
+**Future Versions:**
+This repository reflects v1.1 of the APEX framework. Version 2.0 and all 
+subsequent versions will be released under a more restrictive license 
+(Business Source License or equivalent) that explicitly prohibits commercial 
+use without a separate commercial agreement with the author.
 
 ## License
 
@@ -121,6 +156,24 @@ or production systems, you expressly acknowledge and agree to the following:
 This framework is provided for educational and portfolio purposes only. It does not
 constitute professional advice of any kind. Organisations adopting this framework should
 adapt it to their own context and consult appropriate technical and legal experts.
+
+## Versioning and License Evolution
+
+The MIT License applies to APEX framework v1.0 and v1.1 as published in 
+this repository. The author reserves the right to release future versions 
+under different licensing terms.
+
+Users who adopt v1.1 under MIT terms do so with notice that:
+
+1. The methodology this framework describes is under active commercial 
+   development by the original author
+2. Production-grade implementations of this methodology are not covered 
+   by the MIT License in this repository  
+3. The author's commercial platform implementing this methodology operates 
+   under separate proprietary terms
+
+For licensing enquiries regarding commercial use of the methodology 
+or commercial implementations: contactabhishekdatta@gmail.com
 
 ## Contact
 
